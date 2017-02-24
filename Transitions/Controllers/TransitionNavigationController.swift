@@ -14,7 +14,7 @@ import UIKit
 
 open class TransitionNavigationController: UINavigationController {
 
-    fileprivate var transition: NavigationTransition?
+    fileprivate(set) var transition: NavigationTransition?
     
     public var transitionConfiguration: TransitionConfiguration! {
         didSet {

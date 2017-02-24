@@ -11,7 +11,7 @@ import UIKit
 
 open class TransitionTabBarController: UITabBarController {
 
-    fileprivate var transition: TabBarTransition?
+    fileprivate(set) var transition: TabBarTransition?
     
     public var transitionConfiguration: TransitionConfiguration! {
         didSet {

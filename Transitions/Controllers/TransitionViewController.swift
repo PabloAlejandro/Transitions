@@ -11,7 +11,7 @@ import UIKit
 
 open class TransitionViewController: UIViewController {
     
-    fileprivate var transition: ViewTransition?
+    fileprivate(set) var transition: ViewTransition?
     
     public var transitionConfiguration: TransitionConfiguration! {
         didSet {
