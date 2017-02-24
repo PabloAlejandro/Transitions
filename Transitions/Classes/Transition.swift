@@ -27,6 +27,10 @@ public struct TransitionProperties {
     // Duration for the transition
     public let duration: TimeInterval
     public let modalPresentationStyle: UIModalPresentationStyle
+    public init(duration: TimeInterval, modalPresentationStyle: UIModalPresentationStyle) {
+        self.duration = duration
+        self.modalPresentationStyle = modalPresentationStyle
+    }
 }
 
 /**
@@ -42,7 +46,10 @@ public enum InteractionType {
  */
 public struct InteractionProperties {
     // Sets the interaction interactive for different actions
-    var interaction: InteractionType
+    public let interaction: InteractionType
+    public init(interaction: InteractionType) {
+        self.interaction = interaction
+    }
 }
 
 /**
