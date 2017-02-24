@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Transitions"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "Simple way of presenting a view controller by using transition animations, which may be interactive."
   s.homepage = "https://github.com/PabloAlejandro/Transitions"
 
