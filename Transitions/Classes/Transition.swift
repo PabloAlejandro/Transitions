@@ -8,12 +8,12 @@
 
 import UIKit
 
-typealias TransitionBlock = (_ transitionContext: UIViewControllerContextTransitioning, _ duration: TimeInterval)->(Void)
+public typealias TransitionBlock = (_ transitionContext: UIViewControllerContextTransitioning, _ duration: TimeInterval)->(Void)
 
 /**
  * Enum with transition type (interactive/non interactive)
  */
-enum TransitionConfiguration {
+public enum TransitionConfiguration {
     case noninteractive(transitionProperties: TransitionProperties)
     case interactive(transitionProperties: TransitionProperties, interactionProperties: InteractionProperties)
 }
@@ -23,7 +23,7 @@ enum TransitionConfiguration {
  * @property duration: transition duration for present/dismiss
  * @property modalPresentationStyle: view controller's presentation style
  */
-struct TransitionProperties {
+public struct TransitionProperties {
     // Duration for the transition
     let duration: TimeInterval
     let modalPresentationStyle: UIModalPresentationStyle
@@ -32,7 +32,7 @@ struct TransitionProperties {
 /**
  * Enum with allowed interaction types for interactive transition
  */
-enum InteractionType {
+public enum InteractionType {
     case present, dismiss, all, none
 }
 
@@ -40,7 +40,7 @@ enum InteractionType {
  * Struct with properties for interactive transition
  * @property interaction: allowed interaction types
  */
-struct InteractionProperties {
+public struct InteractionProperties {
     // Sets the interaction interactive for different actions
     var interaction: InteractionType
 }

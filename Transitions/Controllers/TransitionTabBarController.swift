@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class TransitionTabBarController: UITabBarController {
+public class TransitionTabBarController: UITabBarController {
 
-    private(set) var transition: TabBarTransition?
+    fileprivate var transition: TabBarTransition?
     
-    var transitionConfiguration: TransitionConfiguration! {
+    public var transitionConfiguration: TransitionConfiguration! {
         didSet {
             self.transition = GenericTransition(withTabBarController: self, configuration: transitionConfiguration)
         }
     }
     
-    func select(_ vc: UIViewController, withBlock showBlock: @escaping TransitionBlock, sender: Any?) {
+    public func select(_ vc: UIViewController, withBlock showBlock: @escaping TransitionBlock, sender: Any?) {
         if let transition = transition {
             transition.select(viewController: vc, withBlock: showBlock)
         } else {
@@ -27,26 +27,26 @@ class TransitionTabBarController: UITabBarController {
         }
     }
     
-    func select(index: Int, withBlock showBlock: @escaping TransitionBlock, sender: Any?) {
+    public func select(index: Int, withBlock showBlock: @escaping TransitionBlock, sender: Any?) {
         self.select(childViewControllers[index], withBlock: showBlock, sender: sender)
     }
 }
 
 extension TransitionTabBarController: Transition {
     
-    var interactive: Bool {
+    public var interactive: Bool {
         return transition?.interactive ?? false
     }
     
-    func update(progress: Float) {
+    public func update(progress: Float) {
         transition?.update(progress: progress)
     }
     
-    func complete() {
+    public func complete() {
         transition?.complete()
     }
     
-    func cancel() {
+    public func cancel() {
         transition?.cancel()
     }
 }
