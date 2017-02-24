@@ -93,6 +93,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "Transitions/Controllers/*.{swift}", "Transitions/Classes/*.{swift}"
+
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -106,7 +107,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  s.resource  = "TransitionsTests/*Tests.{swift}"
+  # s.resource  = "TransitionsTests/*Tests.{swift}"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
@@ -118,7 +119,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework = "UIKit"
+  s.framework = "UIKit", "XCTest"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
