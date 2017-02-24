@@ -25,8 +25,8 @@ public enum TransitionConfiguration {
  */
 public struct TransitionProperties {
     // Duration for the transition
-    let duration: TimeInterval
-    let modalPresentationStyle: UIModalPresentationStyle
+    public let duration: TimeInterval
+    public let modalPresentationStyle: UIModalPresentationStyle
 }
 
 /**
