@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Transitions"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "Simple way of presenting a view controller by using transition animations, which may be interactive."
   s.homepage = "https://github.com/PabloAlejandro/Transitions"
 
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
                     Transitions library provides an easy way to present different view controllers with a transition animation, which may be interactive, by just subclassing your view controller.
-                    By subclassing your view controller with the right transition controller, you will be able to present/dismiss, push/pop, select, a new view controller with a custom *interactive* animation with a simple call, without worrying about implementing any `UIViewControllerInteractiveTransitioning` or `UIViewControllerAnimatedTransitioning`.
+                    By subclassing your view controller with the right transition controller, you will be able to present/dismiss, push/pop, select, a new view controller with a custom *interactive* animation with a simple call, without having to worry about implementing any `UIViewControllerInteractiveTransitioning` or `UIViewControllerAnimatedTransitioning`.
                    DESC
 
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Pau" => "pau.ios.developer@gmail.com" }
+  s.author             = { "Pablo A. Pérez-Martínez (Pau)" => "pau.ios.developer@gmail.com" }
   # Or just: s.author    = "Pau"
   # s.authors            = { "Pau" => "pau@depop.com" }
   # s.social_media_url   = "http://twitter.com/Pau"
