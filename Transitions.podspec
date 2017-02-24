@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Transitions"
-  s.version      = "0.0.1"
+  s.version      = "0.1.0"
   s.summary      = "Simple way of presenting a view controller by using transition animations, which may be interactive."
-  s.homepage = "https://github.com/PabloAlejandro"
+  s.homepage = "https://github.com/PabloAlejandro/Transitions"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
