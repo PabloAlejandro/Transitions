@@ -35,14 +35,6 @@ let presentBlock = { (transitionContext: UIViewControllerContextTransitioning, d
 self.present(vc, presentBlock: presentBlock)
 ```
 
-## Versions
-### v 0.1.5
-Unit Tests added
-### v 0.1.4
-Podspecs and documentation updated.
-### v 0.1.3
-First version which contains three `UIViewController` subclasses supporting interactive transitions.
-
 ## Files
 
 ### Controllers
