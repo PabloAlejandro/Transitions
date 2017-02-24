@@ -11,16 +11,23 @@ import UIKit
 private let defaultCompletionSpeed = 0.99
 
 enum PresentationBaseType: Equatable {
-    case view(viewController: UIViewController)
-    case navigation(navigationController: UINavigationController)
-    case tab(tabBarController: UITabBarController)
+    case view(viewController: WeakController<UIViewController>)
+    case navigation(navigationController: WeakController<UINavigationController>)
+    case tab(tabBarController: WeakController<UITabBarController>)
     // TODO: Add more possible transitions
     static func ==(lhs: PresentationBaseType, rhs: PresentationBaseType) -> Bool {
         switch (lhs, rhs) {
-        case (.view(let valueA), .view(let valueB)): return valueA == valueB
-        case (.navigation(let valueA), .navigation(let valueB)): return valueA == valueB
+        case (.view(let valueA), .view(let valueB)): return valueA.controller == valueB.controller
+        case (.navigation(let valueA), .navigation(let valueB)): return valueA.controller == valueB.controller
         default: return false
         }
+    }
+}
+
+struct WeakController<T: AnyObject> {
+    weak var controller: T?
+    init(_ controller: T) {
+        self.controller = controller
     }
 }
 
@@ -66,7 +73,7 @@ class GenericTransition: NSObject, Transition {
         self.configuration = configuration
         self.interactiveTransition = UIPercentDrivenInteractiveTransition()
         self.interactiveTransition.completionSpeed = CGFloat(completionSpeed)
-        self.presentationBaseType = PresentationBaseType.view(viewController: viewController)
+        self.presentationBaseType = PresentationBaseType.view(viewController: WeakController(viewController))
         super.init()
     }
     
@@ -74,7 +81,7 @@ class GenericTransition: NSObject, Transition {
         self.configuration = configuration
         self.interactiveTransition = UIPercentDrivenInteractiveTransition()
         self.interactiveTransition.completionSpeed = CGFloat(completionSpeed)
-        self.presentationBaseType = PresentationBaseType.navigation(navigationController: navigationController)
+        self.presentationBaseType = PresentationBaseType.navigation(navigationController: WeakController(navigationController))
         super.init()
         navigationController.delegate = self
     }
@@ -83,7 +90,7 @@ class GenericTransition: NSObject, Transition {
         self.configuration = configuration
         self.interactiveTransition = UIPercentDrivenInteractiveTransition()
         self.interactiveTransition.completionSpeed = CGFloat(completionSpeed)
-        self.presentationBaseType = PresentationBaseType.tab(tabBarController: tabBarController)
+        self.presentationBaseType = PresentationBaseType.tab(tabBarController: WeakController(tabBarController))
         super.init()
         tabBarController.delegate = self
     }
@@ -99,11 +106,11 @@ class GenericTransition: NSObject, Transition {
         }
     }
     
-    fileprivate func currentViewController() -> UIViewController {
+    fileprivate func currentViewController() -> UIViewController? {
         switch presentationBaseType {
-        case .view(let vc): return vc
-        case .navigation(let nv): return nv
-        case .tab(let tab): return tab
+        case .view(let vc): return vc.controller
+        case .navigation(let nv): return nv.controller
+        case .tab(let tab): return tab.controller
         }
     }
 }
@@ -133,7 +140,7 @@ extension GenericTransition: ViewTransition {
         // Set present block
         self.presentBlock = presentBlock
         // Any subclass of UIViewController can present a new view controller
-        let viewController: UIViewController = currentViewController()
+        guard let viewController: UIViewController = currentViewController() else { return }
         // Wire child view controller and set delegates
         wireTo(viewController: vc)
         // Present child view controller
@@ -155,7 +162,7 @@ extension GenericTransition: ViewTransition {
 extension GenericTransition: NavigationTransition {
     
     func push(viewController: UIViewController, withBlock presentBlock: @escaping TransitionBlock) {
-        guard case .navigation(let navigationController) = presentationBaseType else { return }
+        guard case .navigation(let weakNav) = presentationBaseType, let navigationController = weakNav.controller else { return }
         // Set present block
         self.presentBlock = presentBlock
         // Set child
@@ -169,7 +176,7 @@ extension GenericTransition: NavigationTransition {
     }
     
     func pop(viewController: UIViewController, withBlock dismissBlock: @escaping TransitionBlock) -> UIViewController? {
-        guard case .navigation(let navigationController) = presentationBaseType else { return nil }
+        guard case .navigation(let weakVC) = presentationBaseType, let navigationController = weakVC.controller else { return nil }
         // Set dismiss block
         self.dismissBlock = dismissBlock
         // Set child
@@ -188,7 +195,7 @@ extension GenericTransition: NavigationTransition {
 extension GenericTransition: TabBarTransition {
     
     func select(viewController: UIViewController, withBlock showBlock: @escaping TransitionBlock) {
-        guard case .tab(let tabBarController) = presentationBaseType else { return }
+        guard case .tab(let weakTabBar) = presentationBaseType, let tabBarController = weakTabBar.controller else { return }
         // Set present block
         self.presentBlock = showBlock
         // Set pushing property to true
