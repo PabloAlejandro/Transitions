@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class TransitionViewController: UIViewController {
+open class TransitionViewController: UIViewController {
     
     fileprivate var transition: ViewTransition?
     

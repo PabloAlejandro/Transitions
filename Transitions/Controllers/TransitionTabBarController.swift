@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class TransitionTabBarController: UITabBarController {
+open class TransitionTabBarController: UITabBarController {
 
     fileprivate var transition: TabBarTransition?
     

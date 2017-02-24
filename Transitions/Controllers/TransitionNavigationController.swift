@@ -12,7 +12,7 @@ import UIKit
 // NOTE: Do not set delegate for this class, instead use self.transition?.navigationControllerDelegate 
 // if you need to get the calls from the navigation controller's delegate.
 
-public class TransitionNavigationController: UINavigationController {
+open class TransitionNavigationController: UINavigationController {
 
     fileprivate var transition: NavigationTransition?
     
