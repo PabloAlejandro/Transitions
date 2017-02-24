@@ -10,6 +10,11 @@
 		5F6126351E60424000410DBE /* Transitions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F61262B1E60424000410DBE /* Transitions.framework */; };
 		5F61263A1E60424000410DBE /* TransitionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6126391E60424000410DBE /* TransitionsTests.swift */; };
 		5F61263C1E60424000410DBE /* Transitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F61262E1E60424000410DBE /* Transitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F61264E1E60426F00410DBE /* GenericTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6126471E60426F00410DBE /* GenericTransition.swift */; };
+		5F61264F1E60426F00410DBE /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6126481E60426F00410DBE /* Transition.swift */; };
+		5F6126501E60426F00410DBE /* TransitionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F61264A1E60426F00410DBE /* TransitionNavigationController.swift */; };
+		5F6126511E60426F00410DBE /* TransitionTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F61264B1E60426F00410DBE /* TransitionTabBarController.swift */; };
+		5F6126521E60426F00410DBE /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F61264C1E60426F00410DBE /* TransitionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		5F6126341E60424000410DBE /* TransitionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6126391E60424000410DBE /* TransitionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionsTests.swift; sourceTree = "<group>"; };
 		5F61263B1E60424000410DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F6126471E60426F00410DBE /* GenericTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTransition.swift; sourceTree = "<group>"; };
+		5F6126481E60426F00410DBE /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		5F61264A1E60426F00410DBE /* TransitionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionNavigationController.swift; sourceTree = "<group>"; };
+		5F61264B1E60426F00410DBE /* TransitionTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionTabBarController.swift; sourceTree = "<group>"; };
+		5F61264C1E60426F00410DBE /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,8 @@
 		5F61262D1E60424000410DBE /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				5F6126451E60426F00410DBE /* Classes */,
+				5F6126491E60426F00410DBE /* Controllers */,
 				5F61262E1E60424000410DBE /* Transitions.h */,
 				5F61262F1E60424000410DBE /* Info.plist */,
 			);
@@ -84,6 +96,25 @@
 				5F61263B1E60424000410DBE /* Info.plist */,
 			);
 			path = TransitionsTests;
+			sourceTree = "<group>";
+		};
+		5F6126451E60426F00410DBE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5F6126471E60426F00410DBE /* GenericTransition.swift */,
+				5F6126481E60426F00410DBE /* Transition.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5F6126491E60426F00410DBE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F61264A1E60426F00410DBE /* TransitionNavigationController.swift */,
+				5F61264B1E60426F00410DBE /* TransitionTabBarController.swift */,
+				5F61264C1E60426F00410DBE /* TransitionViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F61264F1E60426F00410DBE /* Transition.swift in Sources */,
+				5F6126521E60426F00410DBE /* TransitionViewController.swift in Sources */,
+				5F6126511E60426F00410DBE /* TransitionTabBarController.swift in Sources */,
+				5F61264E1E60426F00410DBE /* GenericTransition.swift in Sources */,
+				5F6126501E60426F00410DBE /* TransitionNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +392,7 @@
 		5F6126431E60424000410DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TransitionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pau-ios-developer.TransitionsTests";
@@ -367,6 +404,7 @@
 		5F6126441E60424000410DBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TransitionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pau-ios-developer.TransitionsTests";
