@@ -11,7 +11,7 @@ Then, just subclass by using the right view controller object:
 - `TransitionTabBarController`
 
 When initialising your subclass, initialise its `transitionConfiguration` property:
-```
+``` yaml
 let properties = TransitionProperties(duration: 0.5, modalPresentationStyle: .overFullScreen)
 let configuration = TransitionConfiguration.noninteractive(transitionProperties: properties)
 self.transitionConfiguration = configuration
@@ -19,7 +19,7 @@ self.transitionConfiguration = configuration
 
 And finally, use the public method in your subclass in order to present or dismiss a new view controller with a custom animation, by just defining a block wit the animation:
 
-```
+``` yaml
 let vc = UIViewcontroller()
 let presentBlock = { (transitionContext: UIViewControllerContextTransitioning, duration: TimeInterval) in
     let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
@@ -36,6 +36,8 @@ self.present(vc, presentBlock: presentBlock)
 ```
 
 ## Versions
+### v 0.1.5
+Unit Tests added
 ### v 0.1.4
 Podspecs and documentation updated.
 ### v 0.1.3
