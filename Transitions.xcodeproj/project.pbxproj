@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F6126351E60424000410DBE /* Transitions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F61262B1E60424000410DBE /* Transitions.framework */; };
-		5F61263A1E60424000410DBE /* GenericTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6126391E60424000410DBE /* GenericTransition.swift */; };
+		5F61263A1E60424000410DBE /* GenericTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6126391E60424000410DBE /* GenericTransitionTests.swift */; };
 		5F61263C1E60424000410DBE /* Transitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F61262E1E60424000410DBE /* Transitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F61264E1E60426F00410DBE /* GenericTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6126471E60426F00410DBE /* GenericTransition.swift */; };
 		5F61264F1E60426F00410DBE /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6126481E60426F00410DBE /* Transition.swift */; };
@@ -35,7 +35,7 @@
 		5F61262E1E60424000410DBE /* Transitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Transitions.h; sourceTree = "<group>"; };
 		5F61262F1E60424000410DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F6126341E60424000410DBE /* TransitionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F6126391E60424000410DBE /* GenericTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTransition.swift; sourceTree = "<group>"; };
+		5F6126391E60424000410DBE /* GenericTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTransitionTests.swift; sourceTree = "<group>"; };
 		5F61263B1E60424000410DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F6126471E60426F00410DBE /* GenericTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTransition.swift; sourceTree = "<group>"; };
 		5F6126481E60426F00410DBE /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		5F6126381E60424000410DBE /* TransitionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F6126391E60424000410DBE /* GenericTransition.swift */,
+				5F6126391E60424000410DBE /* GenericTransitionTests.swift */,
 				5F6126551E6084E000410DBE /* TransitionViewControllerTests.swift */,
 				5F6126571E6084EA00410DBE /* TransitionNavigationControllerTests.swift */,
 				5F6126591E6084F900410DBE /* TransitionTabBarControllerTests.swift */,
@@ -249,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F6126581E6084EA00410DBE /* TransitionNavigationControllerTests.swift in Sources */,
-				5F61263A1E60424000410DBE /* GenericTransition.swift in Sources */,
+				5F61263A1E60424000410DBE /* GenericTransitionTests.swift in Sources */,
 				5F61265A1E6084F900410DBE /* TransitionTabBarControllerTests.swift in Sources */,
 				5F6126561E6084E000410DBE /* TransitionViewControllerTests.swift in Sources */,
 			);
