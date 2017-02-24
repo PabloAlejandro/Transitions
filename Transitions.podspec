@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Transitions"
-  s.version      = "0.1.6"
+  s.version      = "0.1.7"
   s.summary      = "Simple way of presenting a view controller by using transition animations, which may be interactive."
   s.homepage = "https://github.com/PabloAlejandro/Transitions"
 
@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework = "UIKit", "XCTest"
+  s.framework = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
